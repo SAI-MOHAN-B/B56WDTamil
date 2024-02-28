@@ -1,0 +1,82 @@
+DOM Methods:
+Events:
+addEventListerner
+append vs appendChild
+Alter,Prompt and confirm
+1.document.getElementById();
+2.document.getElementsByclassname();
+3.document.getElementsByTagname();
+4.document.querySelector();
+5.document.querySelectorAll();
+
+
+document.getElementsByclassname():
+if you wanted to select the elements based on the set of classes then,
+we need to use this method..
+Output:it will be an Array..
+
+document.querySelector():
+it will select based on the selectors ...
+i.e classname,tagname,,id...
+that too first occurence
+
+Return Type: it will an HTML element
+
+
+document.querySelectorAll():
+it will select based on the selectors ...
+i.e classname,tagname,,id...
+it will select all the Occurenece
+
+Return Type: Array
+
+
+.addEventListerner:
+it is used to add  the events in the DOM
+it will take 2 parameters("eventname",functionname)
+here we don't have a prefix called "on" like in html 
+
+//Event???
+var button = document.createElement("button");
+button.setAttribute("type","button")
+button.innerHTML = "Click me"
+button.addEventListener("mouseover",foo)
+document.body.append(button)
+
+
+function foo(){
+    console.log("hello world!!!");
+}
+
+append  vs append appendChild:
+
+append is used to add the multiple elements
+appendChild is used  to add the single elements
+var div = document.createElement("div")
+var  p = document.createElement("p")
+var span = document.createElement("span")
+div.appendChild(p,span);
+document.body.append(div)
+
+
+var div = document.createElement("div")
+var  p = document.createElement("p")
+var span = document.createElement("span")
+div.appendChild(p,span);
+document.body.append(div)
+
+
+Based on the Previous code 
+Print the firstname, Middlename, Lastname ,Email
+in the HTML elements..
+
+Output: First name : SSSSS
+        Middle name : getElementsByclassname
+        last name: sssdfasrfgfg
+
+        function foo(){
+  var res = prompt("Enter the age of the student")
+  var span = document.createElement("span")
+  span.innerHTML = `The age of the student is  ${res}`
+  document.body.append(span)
+}
