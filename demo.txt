@@ -80,3 +80,32 @@ Output: First name : SSSSS
   span.innerHTML = `The age of the student is  ${res}`
   document.body.append(span)
 }
+
+Fetch and Task
+
+Fetch is an Alternative to XHR
+Syntax: fetch("api url")
+fetch always returns a promise
+Inside The promise Object we have the data in terms of readable stream
+Reaadable Stream: it's a packet of data...
+Converting readable stream to json Object... we use the .json() method
+
+This .json() method will again give promise..
+to handle that promise we need one more .then()
+
+//Open Weather map
+var res = fetch("https://restcountries.com/v3.1/all")
+.then((data)=>data.json()).then((data1)=>bar(data1))
+// console.log(res);
+function bar(data1){
+console.log(data1);
+for(var i =0;i<data1.length;i++){
+    var res = data1[i].latlng
+    foo(...res)
+}
+}
+//here we are using open weather map
+function foo(lat,lon){
+var final_res = fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=`)
+.then((data2)=>data2.json()).then((data3)=>console.log(data3.main.temp))
+}
